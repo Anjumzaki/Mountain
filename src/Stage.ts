@@ -134,7 +134,6 @@ export default class Stage extends PureWidget<{}, State> {
                         .filter(tag => tag != nameTag)
                         .map(tag => tag.getBox())
                         .filter<Box>((box): box is Box => !!box);
-
                     const containerBox = {
                         x: 0,
                         y: 0,

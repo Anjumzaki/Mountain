@@ -33,17 +33,14 @@ function getSamplePlayers() {
 
 async function renderToContainer() {
     const root = document.getElementById("root")!;
-
     root.innerHTML = "";
-
     const stage = new Stage(root, {
         maxPosition: 10000,
-        players: getSamplePlayers()
+        players: await getPlayersFromServer()
     });
 
     stage.moveCamera(0, 0);
     (window as any).stage = stage;
-
     stage.renderWithProps({}); // initial render
 }
 

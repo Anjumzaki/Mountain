@@ -2,6 +2,17 @@ import { Kit, Player } from "../shared/sharedModels";
 
 // Don't modify code below during assignment 1
 // (you can modify this to add yourself to the team)
+const createPlayerWithKit = (kit : Kit) : Function=>{
+    const createPlayer = (name : string)=>{
+    let player : Player = {
+    name : name,
+    kit : kit
+    }
+    return player
+    }
+    
+    return createPlayer;
+    }
 const createPlayerWithTLJKit = createPlayerWithKit("TLJ");
 const createPlayerWithBOAKit = createPlayerWithKit("BOA");
 const createPlayerWithFDJKit = createPlayerWithKit("FDJ");
