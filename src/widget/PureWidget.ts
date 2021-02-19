@@ -57,17 +57,6 @@ export default abstract class PureWidget<T, S> {
     protected abstract render(): void;
 }
 
-// from https://stackoverflow.com/questions/36084515/how-does-shallow-compare-work-in-react
 function shallowEqual(objA: any, objB: any) {
-    if (!objA || !objB) {
-        return objA === objB;
-    }
-    if (objA === objB) {
-        return true;
-    }
-    return !Boolean(
-        Object.keys(Object.assign({}, objA, objB)).find(
-            key => objA[key] !== objB[key]
-        )
-    );
+    return Boolean(JSON.stringify(objA) === JSON.stringify(objB))
 }
